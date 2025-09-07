@@ -1,0 +1,9 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+  @apply min-h-screen bg-cover bg-center text-white;
+  background-image: url("/bg/bg1.jpg");
+  font-family: 'Inter', sans-serif;
+}
