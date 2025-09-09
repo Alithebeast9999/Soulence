@@ -2,8 +2,60 @@
 @tailwind components;
 @tailwind utilities;
 
-body {
-  @apply min-h-screen bg-cover bg-center text-white;
-  background-image: url("/bg/bg1.jpg");
-  font-family: 'Inter', sans-serif;
+/* Базовые правки, убедись что путь /bg/background.gif существует в public/bg/ */
+html, body, #root {
+  height: 100%;
+  margin: 0;
 }
+
+body {
+  font-family: Inter, ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+  color: #fff;
+  /* По умолчанию используем локальный файл, положи свой бэк в public/bg/background.gif */
+  background-image: url("/bg/background.gif");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Кнопки — переиспользуемый стиль */
+.btn-primary {
+  @apply w-full flex items-center justify-center gap-2 py-4 rounded-2xl text-base font-medium text-white/95
+         bg-white/8 border border-white/12 shadow-md;
+  transition: transform .28s cubic-bezier(.2,.9,.2,1), box-shadow .28s ease, background-color .18s ease;
+  will-change: transform;
+  /* для людей, у кого уменьшение движения */
+  motion-reduce:transition-none;
+}
+
+/* hover/active эффекты */
+.btn-primary:hover {
+  transform: translateY(-6px) scale(1.03);
+  box-shadow: 0 18px 30px rgba(2,6,23,0.6), inset 0 1px 0 rgba(255,255,255,0.02);
+  background-color: rgba(255,255,255,0.12);
+}
+
+.btn-primary:active {
+  transform: translateY(-2px) scale(.99);
+}
+
+/* Маленькая плавная "плавающая" анимация для контейнера (опционально) */
+@keyframes floaty {
+  0% { transform: translateY(0px); }
+  50% { transform: translateY(-6px); }
+  100% { transform: translateY(0px); }
+}
+.floaty {
+  animation: floaty 8s ease-in-out infinite;
+}
+
+/* Мобильная корректировка: немного уменьшаем отступы */
+@media (max-width: 420px) {
+  .btn-primary {
+    padding-top: 12px;
+    padding-bottom: 12px;
+  }
+}
+
