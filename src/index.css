@@ -4,6 +4,6 @@
 
 body {
   @apply min-h-screen bg-cover bg-center text-white;
-  background-image: url('/bg/background.gif');
+  background-image: url('/bg/background.jpg');
   font-family: 'Inter', sans-serif;
 }
