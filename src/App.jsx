@@ -3,7 +3,7 @@ import { motion } from "framer-motion";
 export default function App() {
   return (
     <div className="h-screen w-screen flex items-center justify-center bg-cover bg-center"
-         style={{ backgroundImage: "url('/bg/background.gif')" }}>
+         style={{ backgroundImage: "url('/bg/background.jpg')" }}>
       <div className="flex flex-col gap-6 text-center">
         <motion.h1
           initial={{ opacity: 0, y: -30 }}
